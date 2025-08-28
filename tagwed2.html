@@ -1,223 +1,199 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دورة التجويد الميسر - محتويات الفيديوهات</title>
-    <link rel="stylesheet" href="index.css">
-    <style>
-        /* إعدادات عامة */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            direction: rtl;
-            background-color: #f9f9f9;
-        }
-
-        header {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #4CAF50;
-            text-align: center;
-        }
-
-        .video-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
-            border-radius: 8px;
-        }
-
-        .video-info {
-            text-align: center;
-            margin: 10px 0;
-            font-size: 1.1rem;
-            color: #555;
-        }
-
-        .controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 20px 0;
-        }
-
-        .controls button, .controls select {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        .controls button:hover {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        .controls button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            margin-top: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دورة التجويد الميسر - محتويات الفيديوهات</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Cairo', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        direction: rtl;
+        background-color: #f9f9f9;
+    }
+    header {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2rem;
+    }
+    header p {
+        margin: 5px 0 0 0;
+    }
+    main {
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+        color: #4CAF50;
+        text-align: center;
+    }
+    h2 small {
+        font-size: 0.9rem;
+        color: #555;
+    }
+    .video-wrapper {
+        text-align: center;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+    }
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 8px;
+    }
+    .video-info {
+        text-align: center;
+        margin: 10px 0;
+        font-size: 1.1rem;
+        color: #555;
+    }
+    .controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .controls button, .controls select {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+    .controls button {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .controls button:hover:not(:disabled) {
+        background-color: #388E3C;
+    }
+    .controls button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+    .controls select {
+        border: 1px solid #4CAF50;
+        background: white;
+        color: #333;
+    }
+    footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+        margin-top: 20px;
+    }
+</style>
 </head>
 <body>
 
-    <header>
-        <h1>دورة التجويد الميسر</h1>
-        <p>مشاهدة جميع المحاضرات</p>
-    </header>
+<header>
+    <h1>دورة التجويد الميسر</h1>
+    <p>مشاهدة جميع المحاضرات</p>
+</header>
 
-    <main>
-        <h2>المحاضرة الحالية: <span id="lecture-title">مقدمة الدورة</span></h2>
-        
-        <div class="video-wrapper">
-            <iframe id="video-frame" src="https://www.youtube.com/embed/adMjw1kJ1qs" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen></iframe>
-        </div>
+<main>
+    <h2>المحاضرة الحالية: <span id="lecture-title">مقدمة الدورة</span> <small>(<span id="counter"></span>)</small></h2>
+    
+    <div class="video-wrapper">
+        <iframe id="video-frame" src="https://www.youtube.com/embed/adMjw1kJ1qs?autoplay=1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen></iframe>
+    </div>
 
-        <p class="video-info" id="lecture-description">
-            هذا الفيديو يقدم مقدمة شاملة حول الدورة وأهميتها في علم التجويد.
-        </p>
+    <p class="video-info" id="lecture-description">
+        هذا الفيديو يقدم مقدمة شاملة حول الدورة وأهميتها في علم التجويد.
+    </p>
 
-        <div class="controls">
-            <button id="prev-btn" onclick="prevVideo()" disabled>السابق</button>
-            
-            <!-- القائمة المنسدلة -->
-            <select id="video-select" onchange="selectVideo()">
-                <option value="0">مقدمة الدورة</option>
-                <option value="1">تنبهات هامة للطلاب والطالبات</option>
-                <option value="2">بسم الله الرحمن الرحيم</option>
-                <option value="3">البسملة من سورة الفاتحة</option>
-                <option value="4">الحمد لله رب العالمين</option>
-                <option value="5">الرحمن الرحيم</option>
-            </select>
+    <div class="controls">
+        <button id="prev-btn" onclick="prevVideo()" disabled>⬅️ السابق</button>
+        <select id="video-select" onchange="selectVideo()">
+            <option value="0">مقدمة الدورة</option>
+            <option value="1">تنبهات هامة للطلاب والطالبات</option>
+            <option value="2">بسم الله الرحمن الرحيم</option>
+            <option value="3">البسملة من سورة الفاتحة</option>
+            <option value="4">الحمد لله رب العالمين</option>
+            <option value="5">الرحمن الرحيم</option>
+        </select>
+        <button id="next-btn" onclick="nextVideo()">التالي ➡️</button>
+    </div>
+</main>
 
-            <button id="next-btn" onclick="nextVideo()">التالي</button>
-        </div>
-    </main>
+<footer>
+    <p>&copy; 2024 طريق الهداية للعلوم الشرعية. جميع الحقوق محفوظة.</p>
+</footer>
 
-    <footer>
-        <p>&copy; 2024 طريق الهداية للعلوم الشرعية. جميع الحقوق محفوظة.</p>
-    </footer>
+<script>
+const videos = [
+    {id: "adMjw1kJ1qs", title: "مقدمة الدورة", description: "هذا الفيديو يقدم مقدمة شاملة حول الدورة وأهميتها في علم التجويد."},
+    {id: "RInSaNwXY-w", title: "تنبهات هامة للطلاب والطالبات", description: "هذا الفيديو يقدم تنبهات هامة للطلاب والطالبات حول كيفية الاستفادة من الدورة."},
+    {id: "YnbNe1ULv3E", title: "بسم الله الرحمن الرحيم", description: "شرح أهمية البسملة في سورة الفاتحة."},
+    {id: "D4leRbUQ-P8", title: "البسملة من سورة الفاتحة", description: "شرح أوجه القراءة الصحيحة للبسملة."},
+    {id: "zkgeTyCAjnE", title: "الحمد لله رب العالمين", description: "شرح كيفية نطق الآية الصحيحة."},
+    {id: "jObjlPKNJlU", title: "الرحمن الرحيم", description: "التفسير والتجويد الصحيح للآية."}
+];
 
-    <script>
-        // بيانات الفيديوهات
-        const videos = [
-            {
-                id: "adMjw1kJ1qs",
-                title: "مقدمة الدورة",
-                description: "هذا الفيديو يقدم مقدمة شاملة حول الدورة وأهميتها في علم التجويد."
-            },
-            {
-                id: "RInSaNwXY-w",
-                title: "تنبهات هامة للطلاب والطالبات",
-                description: "هذا الفيديو يقدم تنبهات هامة للطلاب والطالبات حول كيفية الاستفادة من الدورة."
-            },
-            {
-                id: "YnbNe1ULv3E",
-                title: "بسم الله الرحمن الرحيم",
-                description: "شرح أهمية البسملة في سورة الفاتحة."
-            },
-            {
-                id: "D4leRbUQ-P8",
-                title: "البسملة من سورة الفاتحة",
-                description: "شرح أوجه القراءة الصحيحة للبسملة."
-            },
-            {
-                id: "zkgeTyCAjnE",
-                title: "الحمد لله رب العالمين",
-                description: "شرح كيفية نطق الآية الصحيحة."
-            },
-            {
-                id: "jObjlPKNJlU",
-                title: "الرحمن الرحيم",
-                description: "التفسير والتجويد الصحيح للآية."
-            }
-        ];
+const videoFrame = document.getElementById("video-frame");
+const lectureTitle = document.getElementById("lecture-title");
+const lectureDescription = document.getElementById("lecture-description");
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+const videoSelect = document.getElementById("video-select");
+const counter = document.getElementById("counter");
 
-        // عناصر DOM
-        const videoFrame = document.getElementById("video-frame");
-        const lectureTitle = document.getElementById("lecture-title");
-        const lectureDescription = document.getElementById("lecture-description");
-        const prevBtn = document.getElementById("prev-btn");
-        const nextBtn = document.getElementById("next-btn");
-        const videoSelect = document.getElementById("video-select");
+let currentVideoIndex = 0;
 
-        // متغير لمتابعة الفيديو الحالي
-        let currentVideoIndex = 0;
+function updateVideo() {
+    const video = videos[currentVideoIndex];
+    videoFrame.src = `https://www.youtube.com/embed/${video.id}?autoplay=1`;
+    lectureTitle.textContent = video.title;
+    lectureDescription.textContent = video.description;
+    videoSelect.value = currentVideoIndex;
+    counter.textContent = `${currentVideoIndex + 1} من ${videos.length}`;
+    prevBtn.disabled = currentVideoIndex === 0;
+    nextBtn.disabled = currentVideoIndex === videos.length - 1;
+}
 
-        // دالة لتحديث الفيديو المعروض
-        function updateVideo() {
-            const video = videos[currentVideoIndex];
-            videoFrame.src = `https://www.youtube.com/embed/${video.id}`;
-            lectureTitle.textContent = video.title;
-            lectureDescription.textContent = video.description;
-            videoSelect.value = currentVideoIndex;
-
-            // التحكم في أزرار السابق والتالي
-            prevBtn.disabled = currentVideoIndex === 0;
-            nextBtn.disabled = currentVideoIndex === videos.length - 1;
-        }
-
-        // دالة للتنقل إلى الفيديو السابق
-        function prevVideo() {
-            if (currentVideoIndex > 0) {
-                currentVideoIndex--;
-                updateVideo();
-            }
-        }
-
-        // دالة للتنقل إلى الفيديو التالي
-        function nextVideo() {
-            if (currentVideoIndex < videos.length - 1) {
-                currentVideoIndex++;
-                updateVideo();
-            }
-        }
-
-        // دالة لتغيير الفيديو من القائمة
-        function selectVideo() {
-            currentVideoIndex = parseInt(videoSelect.value, 10);
-            updateVideo();
-        }
-
-        // تحديث الفيديو عند تحميل الصفحة
+function prevVideo() {
+    if (currentVideoIndex > 0) {
+        currentVideoIndex--;
         updateVideo();
-    </script>
+    }
+}
+
+function nextVideo() {
+    if (currentVideoIndex < videos.length - 1) {
+        currentVideoIndex++;
+        updateVideo();
+    }
+}
+
+function selectVideo() {
+    currentVideoIndex = parseInt(videoSelect.value, 10);
+    updateVideo();
+}
+
+updateVideo();
+</script>
+
 </body>
 </html>
